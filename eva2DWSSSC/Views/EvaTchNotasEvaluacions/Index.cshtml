@@ -1,0 +1,58 @@
+﻿@model IEnumerable<DAL.Modelo.EvaTchNotasEvaluacion>
+
+@{
+    ViewData["Title"] = "Index";
+
+    //En esta vista se muestra una lista con todos los alumnos insertados en la base de datos
+
+}
+
+<h1>Lista de notas de los alumnos</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MdUuid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MdFch)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodAlumno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NotaEvaluacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodEvaluacion)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MdUuid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MdFch)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodAlumno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NotaEvaluacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodEvaluacionNavigation.CodEvaluacion)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.IdNotaEvaluacion">Detalles</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

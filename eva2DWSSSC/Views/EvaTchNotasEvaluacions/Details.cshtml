@@ -1,0 +1,52 @@
+﻿@model DAL.Modelo.EvaTchNotasEvaluacion
+
+@{
+    ViewData["Title"] = "Details";
+
+
+    //Vista que se encarga de mostrar el detalle del alumno
+
+
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>Notas de la Evaluacion</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MdUuid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MdUuid)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MdFch)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MdFch)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CodAlumno)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodAlumno)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NotaEvaluacion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NotaEvaluacion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CodEvaluacion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodEvaluacionNavigation.CodEvaluacion)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Vuelta a la lista</a>
+</div>
